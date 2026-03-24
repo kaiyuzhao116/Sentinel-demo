@@ -1,0 +1,20 @@
+server:
+  port: 8090 # 项目端口，可自定义
+
+spring:
+  application:
+    name: sentinel-demo # 应用名称，会在Sentinel控制台显示
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8858 # 关联Docker启动的Sentinel控制台地址
+        port: 8719 # 客户端与控制台通信端口，默认即可
+      web-context-unify: false # 关闭上下文收敛，【链路限流必需配置】，否则链路模式不生效
+      # 开启Feign的Sentinel支持
+      feign:
+        enabled: true
+
+# 开启Feign的Sentinel功能
+feign:
+  sentinel:
+    enabled: true
