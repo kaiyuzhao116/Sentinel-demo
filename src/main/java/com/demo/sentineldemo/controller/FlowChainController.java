@@ -18,7 +18,7 @@ public class FlowChainController {
     public String adminQuery() {
         return "管理员端：" + testService.commonQuery();
     }
-    
+
     // 链路2：用户端调用，需要限流
     @GetMapping("/user/query")
     public String userQuery() {
