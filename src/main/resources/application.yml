@@ -18,3 +18,7 @@ spring:
 feign:
   sentinel:
     enabled: true
+# 模拟被调用的服务地址（不用Nacos，直接写死HTTP地址）
+remote:
+  service:
+    url: http://localhost:8081 # 模拟的远程服务端口（后面会启动一个8081的简易服务）
